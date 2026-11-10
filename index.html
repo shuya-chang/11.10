@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="和朋友來一場簡單又好玩的 OOXX 對戰。"
+    />
+    <meta name="theme-color" content="#f5f3ed" />
+    <title>OOXX — 來一場吧！</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="OOXX 首頁">
+          <span class="brand-mark" aria-hidden="true">O<span>X</span></span>
+          <span>小小對戰室</span>
+        </a>
+        <span class="round-label"><span class="live-dot"></span> FRIENDLY MATCH</span>
+      </header>
+
+      <section class="game" aria-labelledby="game-title">
+        <div class="intro">
+          <p class="eyebrow">簡單玩・認真贏</p>
+          <h1 id="game-title">OOXX<span class="title-period">.</span></h1>
+          <p class="subtitle">三個連成一線，就拿下這回合。</p>
+        </div>
+
+        <div class="scoreboard" aria-label="目前比分">
+          <div class="score-card score-x" id="score-card-x">
+            <span class="player-symbol" aria-hidden="true">X</span>
+            <span class="player-name">玩家 X</span>
+            <span class="score-value" id="score-x">0</span>
+          </div>
+          <div class="score-divider" aria-hidden="true">:</div>
+          <div class="score-card score-o" id="score-card-o">
+            <span class="player-symbol" aria-hidden="true">O</span>
+            <span class="player-name">玩家 O</span>
+            <span class="score-value" id="score-o">0</span>
+          </div>
+        </div>
+
+        <div class="game-panel">
+          <div class="game-status" aria-live="polite" aria-atomic="true">
+            <span class="turn-indicator" id="turn-indicator" aria-hidden="true">X</span>
+            <span id="status-message">玩家 X 的回合</span>
+          </div>
+
+          <div class="board" id="board" role="group" aria-label="OOXX 棋盤">
+            <button class="cell" type="button" data-cell="0" aria-label="第 1 格，空格"></button>
+            <button class="cell" type="button" data-cell="1" aria-label="第 2 格，空格"></button>
+            <button class="cell" type="button" data-cell="2" aria-label="第 3 格，空格"></button>
+            <button class="cell" type="button" data-cell="3" aria-label="第 4 格，空格"></button>
+            <button class="cell" type="button" data-cell="4" aria-label="第 5 格，空格"></button>
+            <button class="cell" type="button" data-cell="5" aria-label="第 6 格，空格"></button>
+            <button class="cell" type="button" data-cell="6" aria-label="第 7 格，空格"></button>
+            <button class="cell" type="button" data-cell="7" aria-label="第 8 格，空格"></button>
+            <button class="cell" type="button" data-cell="8" aria-label="第 9 格，空格"></button>
+          </div>
+
+          <div class="actions">
+            <button class="button button-primary" id="new-round" type="button">
+              <span aria-hidden="true">↻</span>
+              <span>再玩一局</span>
+            </button>
+            <button class="button button-secondary" id="reset-score" type="button">
+              重置比分
+            </button>
+          </div>
+        </div>
+
+        <p class="helper-text">輪流落子，連成一線的玩家獲勝。</p>
+      </section>
+
+      <footer class="footer">
+        <span>由你們決定誰是 OOXX 王。</span>
+        <span class="footer-sparkle" aria-hidden="true">✳</span>
+      </footer>
+    </main>
+  </body>
+</html>
